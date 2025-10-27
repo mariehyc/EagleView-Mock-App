@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Mock EagleView App",
+  "name_for_model": "mock_eagleview_app",
+  "description_for_human": "A sample app that returns mock property imagery and summaries.",
+  "description_for_model": "Use this app to test ChatGPT app integration by returning fake imagery and mock data.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://garth-chaseable-strugglingly.ngrok-free.dev/openapi.yaml"
+  },
+  "logo_url": "https://picsum.photos/200",
+  "contact_email": "marie.cho@eagleview.com",
+  "legal_info_url": "https://example.com"
+}

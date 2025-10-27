@@ -1,0 +1,31 @@
+openapi: 3.0.1
+info:
+  title: Mock EagleView App API
+  version: 1.0.0
+paths:
+  /get_sample_image:
+    post:
+      summary: Get a mock image
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+      responses:
+        '200':
+          description: mock imagery response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  query_received:
+                    type: string
+                  image_url:
+                    type: string
+                  summary:
+                    type: string
