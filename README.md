@@ -66,7 +66,7 @@ If successful, ChatGPT should detect the get_sample_image tool and allow queries
 “Show me a sample roof image for Seattle.”
 ```
 
-## ⚠️ Known Issue (Current Blocker)
+## Current Issue
 
 Flask logs show:
 ``` bash
