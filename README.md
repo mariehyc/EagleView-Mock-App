@@ -30,7 +30,7 @@ Manifest file describing the app to ChatGPT (used for connector discovery).
 ### `openai.yaml`
 Defines the OpenAPI schema for `/get_sample_image`.
 
-## ⚙️ Commands
+## Commands
 
 ### Setup environment
 ```bash
