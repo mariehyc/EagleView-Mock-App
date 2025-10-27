@@ -1,16 +1,12 @@
-# EagleView-Mock-App
+# EagleView Mock App
 
-# 🛰️ EagleView Mock App
-
-A lightweight **Flask-based mock backend** used to simulate EagleView’s integration with the **ChatGPT Marketplace App (Apps SDK)**.  
-This proof-of-concept demonstrates how ChatGPT could communicate with an external geospatial app through a simple **MCP (Model Context Protocol)** endpoint.
+A lightweight **Flask-based mock backend** used to simulate EagleView’s integration with the **ChatGPT Marketplace App (Apps SDK)**. This proof-of-concept demonstrates how ChatGPT could communicate with an external geospatial app through a simple **MCP (Model Context Protocol)** endpoint.
 
 ---
 
-## 📘 Overview
+## Overview
 
-This mock app simulates what a real EagleView–ChatGPT integration could look like.  
-It doesn’t call internal services or APIs — instead, it provides **mock responses** to mimic data flow and app discovery behavior.
+This mock app simulates what a real EagleView–ChatGPT integration could look like. It doesn’t call internal services or APIs — instead, it provides **mock responses** to mimic data flow and app discovery behavior.
 
 The app exposes three key routes:
 
@@ -22,7 +18,7 @@ The app exposes three key routes:
 
 ---
 
-## 🧠 Code Summary
+## Code Summary
 
 ### `app.py`
 Main Flask application.  
@@ -72,10 +68,6 @@ If successful, ChatGPT should detect the get_sample_image tool and allow queries
 
 ## ⚠️ Known Issue (Current Blocker)
 
-ChatGPT currently times out during connector creation, even though the mock app responds with valid MCP metadata.
-
-Verified
-
 Flask logs show:
 ``` bash
 POST /mcp HTTP/1.1" 200 -
@@ -83,4 +75,4 @@ POST /mcp HTTP/1.1" 200 -
 /mcp endpoint tested successfully via browser
 Public HTTPS tunnels (ngrok + Cloudflare) confirmed reachable
 
-Perhaps there is a ChatGPT Apps SDK beta limitation — intermittent timeouts during connector validation, especially when using free or temporary tunnels.
+However, ChatGPT currently times out during connector creation, even though the mock app responds with valid MCP metadata. Perhaps there is a ChatGPT Apps SDK beta limitation — intermittent timeouts during connector validation, especially when using free or temporary tunnels.
