@@ -36,52 +36,51 @@ Defines the OpenAPI schema for `/get_sample_image`.
 
 ## ⚙️ Commands
 
-### 1️⃣ Setup environment
+### Setup environment
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 pip install flask flask-cors
+```
 
+### Run app 
+```bash
 python app.py
+```
 
+### Local server
+``` bash
 ngrok http 5003
-
+```
 or alternatively
-
+``` bash
 npx cloudflared tunnel --url http://localhost:5003
-
+```
 
 ## Integration with ChatGPT (Apps SDK)
 
 Enable Developer Mode in ChatGPT.
-
-Go to Settings → Connectors → Create.
-
-Use the public tunnel URL (from ngrok or Cloudflare) ending in /mcp.
-
-Choose No authentication.
-
-Click Create.
+1. Go to Settings → Connectors → Create.
+2. Use the public tunnel URL (from ngrok or Cloudflare) ending in /mcp.
+3. Choose No authentication.
+4. Click Create.
 
 If successful, ChatGPT should detect the get_sample_image tool and allow queries like:
-
+```bash
 “Show me a sample roof image for Seattle.”
+```
 
 ## ⚠️ Known Issue (Current Blocker)
 
 ChatGPT currently times out during connector creation, even though the mock app responds with valid MCP metadata.
 
-✅ Verified
+Verified
 
 Flask logs show:
-
+``` bash
 POST /mcp HTTP/1.1" 200 -
-
-
-/mcp endpoint tested successfully via Postman and browser
-
+```
+/mcp endpoint tested successfully via browser
 Public HTTPS tunnels (ngrok + Cloudflare) confirmed reachable
 
-🧩 Root cause
-
-This appears to be a ChatGPT Apps SDK beta limitation — intermittent timeouts during connector validation, especially when using free or temporary tunnels.
+Perhaps there is a ChatGPT Apps SDK beta limitation — intermittent timeouts during connector validation, especially when using free or temporary tunnels.
