@@ -2,6 +2,8 @@
 
 A lightweight **Flask-based mock backend** used to simulate EagleView’s integration with the **ChatGPT Marketplace App (Apps SDK)**. This proof-of-concept demonstrates how ChatGPT could communicate with an external geospatial app through a simple **MCP (Model Context Protocol)** endpoint.
 
+[ChatGPT Apps SDK Documentation](https://developers.openai.com/apps-sdk)
+
 ---
 
 ## Overview
